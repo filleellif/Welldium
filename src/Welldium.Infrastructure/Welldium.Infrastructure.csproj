@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Welldium.Domain\Welldium.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

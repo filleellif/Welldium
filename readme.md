@@ -1,9 +1,11 @@
 # Backend coding test
 
 You are tasked with building an API to simulate space exploration robots on different planets. Your API must support adding and removing robots and sending commands to them. All robots have an assigned area on a planet (a 2D rectangle) and can receive the following commands:
-•	Advance: Move forward one space
-•	Left: Turn left on its axis
-•	Right: Turn right on its axis
+
+- Advance: Move forward one space
+- Left: Turn left on its axis
+- Right: Turn right on its axis
+
 You need to process a string of commands and indicate the final position of the robot or if it has gone out of bounds of its assigned area. These commands need to be processed for all the indicated robots in the simulator.
 
 ## Technical requirements
@@ -16,9 +18,11 @@ Your solution must work when run from the IDE without manual steps. Unit tests a
 
 ### Notes
 
-- Robot
+- Simulation (aggregate root)
+- Robot (entity)
   - Add and remove
-- Area
+- Planet (entity)
+- Area (on planet) (entity)
 - Commands:
   - Advance
   - Left

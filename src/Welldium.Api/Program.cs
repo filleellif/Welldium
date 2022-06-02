@@ -1,6 +1,14 @@
+using MediatR;
+using Welldium.Application.NotificationHandlers;
+using Welldium.Application.Notifications;
+using Welldium.Domain;
+using Welldium.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddSingleton<ISimulationRepository, SimulationRepository>();
+builder.Services.AddScoped<INotificationHandler<CreateSimulationNotification>, CreateSimulationNotificationHandler>();
+builder.Services.AddScoped<INotificationHandler<CreateRobotNotification>, CreateRobotNotificationHandler>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
