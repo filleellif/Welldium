@@ -7,6 +7,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B8EBEBFF-63D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Welldium.Api", "src\Welldium.Api\Welldium.Api.csproj", "{C73202D2-F786-4C70-AEE9-CF47E690746B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Welldium.Application", "src\Welldium.Application\Welldium.Application.csproj", "{68A185DF-DA1F-4199-BF0A-29932A80D490}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Welldium.Domain", "src\Welldium.Domain\Welldium.Domain.csproj", "{2898614B-1420-4CB5-B5F9-059E348F5CA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Welldium.Infrastructure", "src\Welldium.Infrastructure\Welldium.Infrastructure.csproj", "{7A06F838-CF11-4E5C-A13A-456134FB551B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,8 +26,23 @@ Global
 		{C73202D2-F786-4C70-AEE9-CF47E690746B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C73202D2-F786-4C70-AEE9-CF47E690746B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C73202D2-F786-4C70-AEE9-CF47E690746B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68A185DF-DA1F-4199-BF0A-29932A80D490}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68A185DF-DA1F-4199-BF0A-29932A80D490}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68A185DF-DA1F-4199-BF0A-29932A80D490}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68A185DF-DA1F-4199-BF0A-29932A80D490}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2898614B-1420-4CB5-B5F9-059E348F5CA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2898614B-1420-4CB5-B5F9-059E348F5CA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2898614B-1420-4CB5-B5F9-059E348F5CA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2898614B-1420-4CB5-B5F9-059E348F5CA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A06F838-CF11-4E5C-A13A-456134FB551B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A06F838-CF11-4E5C-A13A-456134FB551B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A06F838-CF11-4E5C-A13A-456134FB551B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A06F838-CF11-4E5C-A13A-456134FB551B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C73202D2-F786-4C70-AEE9-CF47E690746B} = {B8EBEBFF-63D4-4DCC-B16A-BEF156AA49A4}
+		{68A185DF-DA1F-4199-BF0A-29932A80D490} = {B8EBEBFF-63D4-4DCC-B16A-BEF156AA49A4}
+		{2898614B-1420-4CB5-B5F9-059E348F5CA7} = {B8EBEBFF-63D4-4DCC-B16A-BEF156AA49A4}
+		{7A06F838-CF11-4E5C-A13A-456134FB551B} = {B8EBEBFF-63D4-4DCC-B16A-BEF156AA49A4}
 	EndGlobalSection
 EndGlobal
