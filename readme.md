@@ -11,9 +11,10 @@ You need to process a string of commands and indicate the final position of the 
 ## Technical requirements
 
 Your API must be implemented using the following tech stack:
-•	.Net Core API 6
-•	MediatR
-•	Swagger
+-	.Net Core API 6
+-	MediatR
+-	Swagger
+
 Your solution must work when run from the IDE without manual steps. Unit tests are useful but not required. Show your architecture, design and coding skills but prioritizing clear, efficient code. You are expected to use no more than 3 hours on this test
 
 ### Notes
@@ -29,3 +30,8 @@ Your solution must work when run from the IDE without manual steps. Unit tests a
   - Right
 
 Process a string of commands and indicate each robots final position (or out of bounds).
+
+- Show if robot is out of bounds
+- Better routing?
+- Better design of robot in simulation in domain?
+- Return links for commands

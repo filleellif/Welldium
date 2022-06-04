@@ -15,14 +15,14 @@ public class CreateController : ControllerBase
         _handler = handler;
     }
 
-    [HttpPost(Name = Constants.RouteNames.CreateRobot)]
-    public async Task Create(
-        Guid simulationId,
-        [FromBody] Request request,
-        CancellationToken cancellationToken)
-    {
-        var robotId = Guid.NewGuid();
+    //[HttpPost(Name = Constants.RouteNames.CreateRobot)]
+    //public async Task Create(
+    //    Guid simulationId,
+    //    [FromBody] Request request,
+    //    CancellationToken cancellationToken)
+    //{
+    //    var robotId = Guid.NewGuid();
 
-        await _handler.Handle(new CreateRobotNotification(simulationId, robotId, request.Name), cancellationToken);
-    }
+    //    await _handler.Handle(new CreateRobotNotification(simulationId, robotId, request.Name), cancellationToken);
+    //}
 }

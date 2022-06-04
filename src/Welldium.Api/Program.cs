@@ -9,6 +9,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSingleton<ISimulationRepository, SimulationRepository>();
 builder.Services.AddScoped<INotificationHandler<CreateSimulationNotification>, CreateSimulationNotificationHandler>();
 builder.Services.AddScoped<INotificationHandler<CreateRobotNotification>, CreateRobotNotificationHandler>();
+builder.Services.AddScoped<INotificationHandler<RemoveRobotNotification>, RemoveRobotNotificationHandler>();
+builder.Services.AddScoped<INotificationHandler<AdvanceRobotNotification>, AdvanceRobotNotificationHandler>();
+builder.Services.AddScoped<INotificationHandler<TurnRobotLeftNotification>, TurnRobotLeftNotificationHandler>();
+builder.Services.AddScoped<INotificationHandler<TurnRobotRightNotification>, TurnRobotRightNotificationHandler>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

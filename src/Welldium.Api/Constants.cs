@@ -16,5 +16,13 @@ public static class Constants
         public const string GetSimulation = nameof(GetSimulation);
 
         public const string CreateRobot = nameof(CreateRobot);
+
+        public const string RemoveRobot = nameof(RemoveRobot);
+
+        public const string AdvanceRobot = nameof(AdvanceRobot);
+
+        public const string TurnRobotLeft = nameof(TurnRobotLeft);
+
+        public const string TurnRobotRight = nameof(TurnRobotRight);
     }
 }

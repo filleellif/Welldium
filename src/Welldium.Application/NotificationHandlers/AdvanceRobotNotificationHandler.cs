@@ -4,16 +4,16 @@ using Welldium.Domain;
 
 namespace Welldium.Application.NotificationHandlers;
 
-public class CreateRobotNotificationHandler : INotificationHandler<CreateRobotNotification>
+public class AdvanceRobotNotificationHandler : INotificationHandler<AdvanceRobotNotification>
 {
     private readonly ISimulationRepository _simulationRepository;
 
-    public CreateRobotNotificationHandler(ISimulationRepository simulationRepository)
+    public AdvanceRobotNotificationHandler(ISimulationRepository simulationRepository)
     {
         _simulationRepository = simulationRepository;
     }
 
-    public async Task Handle(CreateRobotNotification notification, CancellationToken cancellationToken)
+    public async Task Handle(AdvanceRobotNotification notification, CancellationToken cancellationToken)
     {
         var simulation = await _simulationRepository.Get(notification.SimulationId);
 
@@ -22,7 +22,7 @@ public class CreateRobotNotificationHandler : INotificationHandler<CreateRobotNo
             return;
         }
 
-        simulation.AddRobot(notification.RobotId, notification.RobotName);
+        simulation.AdvanceRobot(notification.RobotId);
 
         await _simulationRepository.Save(simulation);
     }

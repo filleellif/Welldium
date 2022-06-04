@@ -2,18 +2,15 @@
 
 namespace Welldium.Application.Notifications;
 
-public class CreateRobotNotification : INotification
+public class TurnRobotRightNotification : INotification
 {
     public Guid SimulationId { get; }
 
     public Guid RobotId { get; }
 
-    public string RobotName { get; }
-
-    public CreateRobotNotification(Guid simulationId, Guid robotId, string robotName)
+    public TurnRobotRightNotification(Guid simulationId, Guid robotId)
     {
         SimulationId = simulationId;
         RobotId = robotId;
-        RobotName = robotName;
     }
 }
