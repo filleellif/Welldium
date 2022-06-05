@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Welldium.Application\Welldium.Application.csproj" />
     <ProjectReference Include="..\Welldium.Infrastructure\Welldium.Infrastructure.csproj" />
+    <ProjectReference Include="..\Welldium.ReadModels\Welldium.ReadModels.csproj" />
   </ItemGroup>
 
 </Project>

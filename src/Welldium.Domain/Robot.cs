@@ -39,6 +39,24 @@ public class Robot : Entity
         }
     }
 
+    internal void Move(Move move)
+    {
+        switch (move)
+        {
+            case Domain.Move.Advance:
+                Advance();
+                break;
+            case Domain.Move.TurnLeft:
+                TurnLeft();
+                break;
+            case Domain.Move.TurnRight:
+                TurnRight();
+                break;
+            case Domain.Move.None:
+                throw new ArgumentException("Illegal move");
+        }
+    }
+
     public void TurnLeft()
     {
         switch (Direction)

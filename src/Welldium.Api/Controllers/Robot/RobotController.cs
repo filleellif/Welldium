@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Welldium.Application.Notifications;
 
-namespace Welldium.Api.Controllers.Simulation.Robot;
+namespace Welldium.Api.Controllers.Robot;
 
 [ApiController]
 [Route(Constants.Routes.Simulation)]
@@ -10,13 +10,16 @@ public class RobotController : ControllerBase
 {
     private readonly INotificationHandler<CreateRobotNotification> _createRobotHandler;
     private readonly INotificationHandler<RemoveRobotNotification> _removeRobotHandler;
+    private readonly INotificationHandler<MoveRobotNotification> _moveRobotHandler;
 
     public RobotController(
         INotificationHandler<CreateRobotNotification> createRobotHandler,
-        INotificationHandler<RemoveRobotNotification> removeRobotHandler)
+        INotificationHandler<RemoveRobotNotification> removeRobotHandler,
+        INotificationHandler<MoveRobotNotification> moveRobotHandler)
     {
         _createRobotHandler = createRobotHandler;
         _removeRobotHandler = removeRobotHandler;
+        _moveRobotHandler = moveRobotHandler;
     }
 
     [HttpPost("{simulationId}", Name = Constants.RouteNames.CreateRobot)]
@@ -36,8 +39,17 @@ public class RobotController : ControllerBase
         Guid robotId,
         CancellationToken cancellationToken)
     {
-
-
         await _removeRobotHandler.Handle(new RemoveRobotNotification(simulationId, robotId), cancellationToken);
+    }
+
+    [HttpPost("{simulationId}/{robotId}/move", Name = Constants.RouteNames.MoveRobot)]
+    public async Task MoveRobot(
+        Guid simulationId,
+        Guid robotId,
+        [FromBody] MoveRobotRequest request,
+        CancellationToken cancellationToken)
+    {
+        var notification = request.ToNotification(simulationId, robotId);
+        await _moveRobotHandler.Handle(notification, cancellationToken);
     }
 }

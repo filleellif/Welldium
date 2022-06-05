@@ -1,4 +1,4 @@
-﻿namespace Welldium.Api.Controllers.Simulation.Robot;
+﻿namespace Welldium.Api.Controllers.Robot;
 
 public record CreateRobotRequest
 {

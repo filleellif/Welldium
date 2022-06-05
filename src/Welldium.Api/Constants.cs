@@ -19,6 +19,8 @@ public static class Constants
 
         public const string RemoveRobot = nameof(RemoveRobot);
 
+        public const string MoveRobot = nameof(MoveRobot);
+
         public const string AdvanceRobot = nameof(AdvanceRobot);
 
         public const string TurnRobotLeft = nameof(TurnRobotLeft);
@@ -26,3 +28,5 @@ public static class Constants
         public const string TurnRobotRight = nameof(TurnRobotRight);
     }
 }
+
+public record Link(string Id, string Label, string Url);

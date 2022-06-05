@@ -35,3 +35,4 @@ Process a string of commands and indicate each robots final position (or out of 
 - Better routing?
 - Better design of robot in simulation in domain?
 - Return links for commands
+- Use MediatR differently?

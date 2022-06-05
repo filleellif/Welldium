@@ -2,12 +2,15 @@ namespace Welldium.Domain.Test;
 
 public abstract class RobotTest
 {
-    private readonly Area _area = new Area(new Point(1, 1), new Size(10, 10));
     private readonly Robot _sut;
 
     protected RobotTest()
     {
-        _sut = new Robot(Guid.NewGuid(), Guid.NewGuid().ToString(), _area);
+        var id = Guid.NewGuid();
+        var name = Guid.NewGuid().ToString();
+        var area = new Area(new Point(1, 1), new Size(10, 10));
+
+        _sut = new Robot(id, name, area);
     }
 
     public sealed class When_initializing : RobotTest
