@@ -26,9 +26,9 @@ public class CreateController : ControllerBase
 
         var links = new[]
         {
-            new Link("CreateRobot", _linkGenerator.GetPathByName(Constants.RouteNames.CreateRobot, new { simulationId }))
+            new Link("CreateRobot", _linkGenerator.GetPathByName(Constants.RouteNames.CreateRobot, new { simulationId })),
         };
 
-        return CreatedAtRoute(Constants.RouteNames.GetSimulation, new { id = simulationId }, new { Links = links });
+        return CreatedAtRoute(Constants.RouteNames.GetSimulation, new { simulationId }, new { Links = links });
     }
 }

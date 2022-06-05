@@ -14,10 +14,10 @@ public class GetController : ControllerBase
         _simulationQueries = simulationQueries;
     }
 
-    [HttpGet("{id}", Name = Constants.RouteNames.GetSimulation)]
-    public async Task<IActionResult> Create(Guid id)
+    [HttpGet("{simulationId}", Name = Constants.RouteNames.GetSimulation)]
+    public async Task<IActionResult> Create(Guid simulationId)
     {
-        var simulation = await _simulationQueries.GetSimulation(id);
+        var simulation = await _simulationQueries.GetSimulation(simulationId);
 
         return Ok(simulation);
     }
