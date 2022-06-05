@@ -28,5 +28,3 @@ public static class Constants
         public const string TurnRobotRight = nameof(TurnRobotRight);
     }
 }
-
-public record Link(string Id, string Label, string Url);

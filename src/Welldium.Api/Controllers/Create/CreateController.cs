@@ -24,12 +24,11 @@ public class CreateController : ControllerBase
 
         await _handler.Handle(new CreateSimulationNotification(simulationId), cancellationToken);
 
-        var createRobotLink = _linkGenerator.GetPathByName(Constants.RouteNames.CreateRobot, new { simulationId });
         var links = new[]
         {
-            new Link(Guid.NewGuid().ToString(), "CreateRobot", createRobotLink!)
+            new Link("CreateRobot", _linkGenerator.GetPathByName(Constants.RouteNames.CreateRobot, new { simulationId }))
         };
 
-        return CreatedAtRoute(Constants.RouteNames.GetSimulation, new { id = simulationId }, links);
+        return CreatedAtRoute(Constants.RouteNames.GetSimulation, new { id = simulationId }, new { Links = links });
     }
 }

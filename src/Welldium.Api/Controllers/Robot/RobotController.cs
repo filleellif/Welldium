@@ -11,26 +11,37 @@ public class RobotController : ControllerBase
     private readonly INotificationHandler<CreateRobotNotification> _createRobotHandler;
     private readonly INotificationHandler<RemoveRobotNotification> _removeRobotHandler;
     private readonly INotificationHandler<MoveRobotNotification> _moveRobotHandler;
+    private readonly LinkGenerator _linkGenerator;
 
     public RobotController(
         INotificationHandler<CreateRobotNotification> createRobotHandler,
         INotificationHandler<RemoveRobotNotification> removeRobotHandler,
-        INotificationHandler<MoveRobotNotification> moveRobotHandler)
+        INotificationHandler<MoveRobotNotification> moveRobotHandler,
+        LinkGenerator linkGenerator)
     {
         _createRobotHandler = createRobotHandler;
         _removeRobotHandler = removeRobotHandler;
         _moveRobotHandler = moveRobotHandler;
+        _linkGenerator = linkGenerator;
     }
 
     [HttpPost("{simulationId}", Name = Constants.RouteNames.CreateRobot)]
-    public async Task CreateRobot(
+    public async Task<IActionResult> CreateRobot(
         Guid simulationId,
         [FromBody] CreateRobotRequest request,
         CancellationToken cancellationToken)
     {
         var robotId = Guid.NewGuid();
 
+        var links = new[]
+        {
+            new Link("RemoveRobot", _linkGenerator.GetPathByName(Constants.RouteNames.RemoveRobot, new { simulationId, robotId })),
+            new Link("MoveRobot", _linkGenerator.GetPathByName(Constants.RouteNames.MoveRobot, new { simulationId, robotId })),
+        };
+
         await _createRobotHandler.Handle(new CreateRobotNotification(simulationId, robotId, request.Name), cancellationToken);
+
+        return Ok(new { Links = links });
     }
 
     [HttpDelete("{simulationId}/{robotId}", Name = Constants.RouteNames.RemoveRobot)]

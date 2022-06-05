@@ -43,21 +43,6 @@ public class Simulation : Entity
         }
     }
 
-    public void AdvanceRobot(Guid robotId)
-    {
-        GetRobot(robotId)?.Advance();
-    }
-
-    public void TurnRobotLeft(Guid robotId)
-    {
-        GetRobot(robotId)?.TurnLeft();
-    }
-
-    public void TurnRobotRight(Guid robotId)
-    {
-        GetRobot(robotId)?.TurnRight();
-    }
-
     private Robot? GetRobot(Guid robotId)
     {
         return _robots.SingleOrDefault(r => r.Id.Equals(robotId));

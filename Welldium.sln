@@ -13,11 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Welldium.Domain", "src\Well
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Welldium.Infrastructure", "src\Welldium.Infrastructure\Welldium.Infrastructure.csproj", "{7A06F838-CF11-4E5C-A13A-456134FB551B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{90BAD434-DFC3-4055-A958-A90DF9B6D856}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Welldium.Domain.Test", "test\Welldium.Domain.Test\Welldium.Domain.Test.csproj", "{0804289B-95B3-4629-B84C-B9EAEA2E7899}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Welldium.ReadModels", "src\Welldium.ReadModels\Welldium.ReadModels.csproj", "{CF794EE1-70E7-4856-B588-88A7619569E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Welldium.ReadModels", "src\Welldium.ReadModels\Welldium.ReadModels.csproj", "{CF794EE1-70E7-4856-B588-88A7619569E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +37,6 @@ Global
 		{7A06F838-CF11-4E5C-A13A-456134FB551B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A06F838-CF11-4E5C-A13A-456134FB551B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A06F838-CF11-4E5C-A13A-456134FB551B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0804289B-95B3-4629-B84C-B9EAEA2E7899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0804289B-95B3-4629-B84C-B9EAEA2E7899}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0804289B-95B3-4629-B84C-B9EAEA2E7899}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0804289B-95B3-4629-B84C-B9EAEA2E7899}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CF794EE1-70E7-4856-B588-88A7619569E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CF794EE1-70E7-4856-B588-88A7619569E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF794EE1-70E7-4856-B588-88A7619569E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -58,7 +50,6 @@ Global
 		{68A185DF-DA1F-4199-BF0A-29932A80D490} = {B8EBEBFF-63D4-4DCC-B16A-BEF156AA49A4}
 		{2898614B-1420-4CB5-B5F9-059E348F5CA7} = {B8EBEBFF-63D4-4DCC-B16A-BEF156AA49A4}
 		{7A06F838-CF11-4E5C-A13A-456134FB551B} = {B8EBEBFF-63D4-4DCC-B16A-BEF156AA49A4}
-		{0804289B-95B3-4629-B84C-B9EAEA2E7899} = {90BAD434-DFC3-4055-A958-A90DF9B6D856}
 		{CF794EE1-70E7-4856-B588-88A7619569E0} = {B8EBEBFF-63D4-4DCC-B16A-BEF156AA49A4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

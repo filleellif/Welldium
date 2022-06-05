@@ -10,6 +10,12 @@ public class Robot : Entity
 
     public Direction Direction { get; private set; }
 
+    public bool IsOutOfBounds => 
+                Position.X > Area.Point.X + Area.Size.Width ||
+                Position.Y > Area.Point.Y + Area.Size.Height ||
+                Position.X < Area.Point.X ||
+                Position.Y < Area.Point.Y;
+
     public Robot(Guid id, string name, Area area) : base(id)
     {
         Name = name;
@@ -20,7 +26,25 @@ public class Robot : Entity
         Direction = Direction.Up;
     }
 
-    public void Advance()
+    public void Move(Move move)
+    {
+        switch (move)
+        {
+            case Domain.Move.Advance:
+                Advance();
+                break;
+            case Domain.Move.TurnLeft:
+                TurnLeft();
+                break;
+            case Domain.Move.TurnRight:
+                TurnRight();
+                break;
+            case Domain.Move.None:
+                throw new ArgumentException("Illegal move");
+        }
+    }
+
+    private void Advance()
     {
         switch (Direction)
         {
@@ -39,25 +63,7 @@ public class Robot : Entity
         }
     }
 
-    internal void Move(Move move)
-    {
-        switch (move)
-        {
-            case Domain.Move.Advance:
-                Advance();
-                break;
-            case Domain.Move.TurnLeft:
-                TurnLeft();
-                break;
-            case Domain.Move.TurnRight:
-                TurnRight();
-                break;
-            case Domain.Move.None:
-                throw new ArgumentException("Illegal move");
-        }
-    }
-
-    public void TurnLeft()
+    private void TurnLeft()
     {
         switch (Direction)
         {
@@ -76,7 +82,7 @@ public class Robot : Entity
         }
     }
 
-    public void TurnRight()
+    private void TurnRight()
     {
         switch (Direction)
         {
